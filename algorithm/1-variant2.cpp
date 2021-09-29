@@ -2,6 +2,7 @@
  * Удалить из массива все нечётные числа и развернуть оставшиеся элементы в обратном порядке
 */
 #include <iostream>
+#include <algorithm>
 #include <cstdlib>
 #include <time.h>
 using namespace std;
@@ -42,10 +43,9 @@ int main()
 
     // сортировка элементов массива в обратном порядке
     for (int i = 0, j = num - 1, save; i < num / 2; i++, j--)
-    {
-        save = p[j];
-        p[j] = p[i];
-        p[i] = save;
+    {   
+        // меняю элементы местами
+        swap(p[i], p[j]);
     }
 
     cout << endl << endl;
